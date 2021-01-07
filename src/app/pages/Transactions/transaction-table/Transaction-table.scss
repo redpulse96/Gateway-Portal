@@ -1,0 +1,150 @@
+@import "../../../@theme/styles/themes";
+
+@include nb-install-component() {
+  nb-card {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.eyeClass {
+  padding-top: 50%;
+}
+
+//responsive css
+/* Container for flexboxes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create four equal columns */
+.column {
+  padding: 5px;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 3%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
+/*
+.resetBtnDiv{
+  padding-left: 10px;
+}
+.searchBtn{
+  //padding-left: 9px !important;
+  height: 85%;
+  display: inline-block !important;
+}
+.resetBtn{
+  height: 85%;
+  display: inline-block !important;
+}
+.searchDiv{
+  //float : right !important;
+}
+.searchDrpDwn{
+  width:320px !important;
+  //float:right;
+} */
+:host /deep/ ng2-st-tbody-edit-delete {
+  display: flex !important;
+  height: 0 !important;
+}
+
+:host
+  /deep/
+  ng2-st-tbody-custom
+  a.ng2-smart-action.ng2-smart-action-custom-custom {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  // font-size: 1.1em;
+  display: inline-flex !important;
+}
+
+:host /deep/ .ng2-smart-action .custom-eye {
+  font-weight: 300 !important;
+  font-size: 23px !important;
+  padding-top: 5px !important;
+  padding-right: 30px;
+}
+
+:host /deep/ ng2-st-tbody-custom {
+  display: inline-flex !important;
+}
+:host
+  /deep/
+  ng2-st-tbody-custom
+  a.ng2-smart-action.ng2-smart-action-custom-custom:hover {
+  color: #5dcfe3;
+}
+
+:host /deep/ ng2-smart-table table {
+  // border-spacing: 2px;
+  border-color: grey; /* border of the big table*/
+  text-align: center;
+  table-layout: fixed;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  font-size: 10px !important;
+}
+
+/* Css For normal size */
+:host /deep/ ng2-smart-table table > tbody > tr > td {
+  box-sizing: border-box;
+  border: 1px solid grey;
+  font-size: 12px !important;
+  padding: 1px;
+}
+:host /deep/ ng2-smart-table table tr th,
+:host /deep/ ng2-smart-table table tr th a {
+  font-family: Open Sans, sans-serif;
+  font-size: 13px !important;
+  font-weight: bold;
+  line-height: 1.25rem;
+  color: #192038;
+  box-sizing: border-box;
+}
+
+:host /deep/ ng2-smart-table table tr th {
+  border: 1px solid grey;
+}
+
+/* Css for large screen */
+@media (-webkit-min-device-pixel-ratio: 1.25) and (-webkit-max-device-pixel-ratio: 1.25) {
+  :host /deep/ ng2-smart-table table > tbody > tr > td {
+    box-sizing: border-box;
+    border: 1px solid grey;
+    font-size: 10px !important;
+    padding: 1px;
+  }
+
+  /* headers grid color*/
+  :host /deep/ ng2-smart-table table tr th,
+  :host /deep/ ng2-smart-table table tr th a {
+    font-family: Open Sans, sans-serif;
+    font-size: 9px !important;
+    font-weight: bold;
+    line-height: 1.25rem;
+    color: #192038;
+    box-sizing: border-box;
+  }
+
+  :host /deep/ ng2-smart-table table tr th {
+    border: 1px solid grey;
+  }
+}
+
+/*font size*/
+:host /deep/ ng2-smart-table {
+  min-width: 1500px !important;
+}

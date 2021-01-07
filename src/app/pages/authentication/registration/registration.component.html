@@ -1,0 +1,192 @@
+<div class="steppers-container row">
+  <div class="col-md-12 col-lg-12 col-xxxl-12">
+    <nb-card>
+      <nb-card-body>
+        <nb-stepper #stepper>
+
+          <!--  User details Start-->
+          <nb-step [stepControl]="userForm" label="Personal Details">
+            <form [formGroup]="userForm" class="step-container">
+              <div class="input-group">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="Username" class="label">User Name</label>
+                    <input type="text" placeholder="Enter Username" class="form-control" formControlName="Username"
+                      [ngClass]="{'form-control-danger':(userForm.get('Username').invalid || userForm.get('Username').dirty || userForm.get('Username').touched) }" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="NewPassword" class="label">New Password</label>
+                    <input type="text" placeholder="Enter your new password" class="form-control"
+                      formControlName="NewPassword"
+                      [ngClass]="{ 'form-control-danger': (userForm.get('NewPassword').invalid || userForm.get('NewPassword').dirty || userForm.get('NewPassword').touched)}" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="ConfirmPassword" class="label">Confirm Password</label>
+                    <input type="text" placeholder="Enter Confirm Password" class="form-control"
+                      formControlName="ConfirmPassword"
+                      [ngClass]="{'form-control-danger':  (userForm.get('ConfirmPassword').invalid || userForm.get('ConfirmPassword').dirty || userForm.get('ConfirmPassword').touched) }" />
+                  </div>
+                </div>
+              </div>
+              <button nbButton nbStepperNext type="button" (click)="onUserSubmit()">next</button>
+            </form>
+          </nb-step>
+          <!-- User Details End-->
+
+
+          <nb-step [stepControl]="contactForm" label="Contact Details">
+            <form [formGroup]="contactForm" class="step-container">
+              <div class="input-group">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="username" class="label">Email</label>
+                    <input type="text" placeholder="Enter Email" class="form-control" formControlName="Email"
+                      [ngClass]="{ 'form-control-danger': contactForm.invalid && (contactForm.get('Email').dirty || contactForm.get('Email').touched) }" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="MobileNumber" class="label">Mobile Number</label>
+                    <input type="text" placeholder="Enter Mobile Number" class="form-control"
+                      formControlName="MobileNumber"
+                      [ngClass]="{  'form-control-danger':  contactForm.invalid &&  (contactForm.get('MobileNumber').dirty || contactForm.get('MobileNumber').touched)  }" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="Address" class="label">Address</label>
+                    <input type="text" placeholder="Enter Address" class="form-control" formControlName="Address"
+                      [ngClass]="{ 'form-control-danger':  contactForm.invalid &&  (contactForm.get('Address').dirty || contactForm.get('Address').touched) }" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="Country" class="label">Country</label>
+                    <input type="text" placeholder="Enter Country" class="form-control" formControlName="Country"
+                      [ngClass]="{ 'form-control-danger': contactForm.invalid && (contactForm.get('Country').dirty || contactForm.get('Country').touched)  }" />
+                  </div>
+                </div>
+              </div>
+              <button nbButton nbStepperPrevious>prev</button>
+              <button nbButton nbStepperNext type="button" (click)="onContactSubmit()">next</button>
+            </form>
+          </nb-step>
+
+          <nb-step [stepControl]="businessForm" label="Business Details">
+            <form [formGroup]="businessForm" class="step-container">
+              <div class="input-group">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="PaymentVendorName" class="label">Payment Vendor Name</label>
+                    <input type="text" placeholder="Enter Payment Vendor Name" class="form-control"
+                      formControlName="PaymentVendorName"
+                      [ngClass]="{ 'form-control-danger': businessForm.invalid && (businessForm.get('PaymentVendorName').dirty || businessForm.get('PaymentVendorName').touched) }" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="PaymentVendorDescription" class="label">Payment Vendor Description</label>
+                    <input type="text" placeholder="Enter Payment Vendor Description" class="form-control"
+                      formControlName="PaymentVendorDescription"
+                      [ngClass]="{  'form-control-danger':  businessForm.invalid &&  (businessForm.get('PaymentVendorDescription').dirty || businessForm.get('PaymentVendorDescription').touched)  }" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="BusinessTIN" class="label">Business TIN</label>
+                    <input type="text" placeholder="Enter Business TIN" class="form-control"
+                      formControlName="BusinessTIN"
+                      [ngClass]="{ 'form-control-danger':  businessForm.invalid &&  (businessForm.get('BusinessTIN').dirty || businessForm.get('BusinessTIN').touched) }" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="AverageCustomer" class="label">Average Customer</label>
+                    <input type="text" placeholder="Enter Average Customer" class="form-control"
+                      formControlName="AverageCustomer"
+                      [ngClass]="{ 'form-control-danger': businessForm.invalid && (businessForm.get('AverageCustomer').dirty || businessForm.get('AverageCustomer').touched)  }" />
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="TaxCertificateURL" class="label">Tax Certificate URL</label>
+                    <input type="text" placeholder="Enter Tax Certificate URL" class="form-control"
+                      formControlName="TaxCertificateURL"
+                      [ngClass]="{ 'form-control-danger': businessForm.invalid && (businessForm.get('TaxCertificateURL').dirty || businessForm.get('TaxCertificateURL').touched)  }" />
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="VendorIntimationRoute" class="label">Vendor Intimation Route</label>
+                    <input type="text" placeholder="Enter Vendor Intimation Route" class="form-control"
+                      formControlName="VendorIntimationRoute"
+                      [ngClass]="{ 'form-control-danger': businessForm.invalid && (businessForm.get('VendorIntimationRoute').dirty || businessForm.get('VendorIntimationRoute').touched)  }" />
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="VendorProcessingRoute" class="label">Vendor Processing Route</label>
+                    <input type="text" placeholder="Enter Vendor Processing Route" class="form-control"
+                      formControlName="VendorProcessingRoute"
+                      [ngClass]="{ 'form-control-danger': businessForm.invalid && (businessForm.get('VendorProcessingRoute').dirty || businessForm.get('VendorProcessingRoute').touched)  }" />
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="VendorTypeID" class="label">Vendor Type ID</label>
+                    <ng-select [items]="vendorTypes" bindLabel="VendorType" bindValue="VendorTypeID"
+                      formControlName="VendorTypeID" class="form-control"
+                      [ngClass]="{ 'form-control-danger': businessForm.invalid && (businessForm.get('VendorTypeID').dirty || businessForm.get('VendorTypeID').touched)  }">
+                      >
+                    </ng-select>
+                  </div>
+                </div>
+
+              </div>
+              <button nbButton nbStepperPrevious>prev</button>
+              <button nbButton type="button" (click)="onBusinessSubmit()">next</button>
+            </form>
+          </nb-step>
+          <!--
+            <nb-step [stepControl]="thirdForm" label="Business Details">
+            <form [formGroup]="thirdForm" (ngSubmit)="onThirdSubmit()" class="step-container">
+              <div class="input-group">
+                <input type="text" placeholder="Enter something" class="form-control" formControlName="thirdCtrl"
+                  [ngClass]="{
+                    'form-control-danger':
+                      thirdForm.invalid &&
+                      (thirdForm.dirty || thirdForm.touched)
+                  }" />
+              </div>
+              <button nbButton nbStepperPrevious>prev</button>
+              <button nbButton nbStepperNext>Confirm</button>
+            </form>
+          </nb-step>
+        -->
+          <nb-step [stepControl]="businessForm" [hidden]="true" label="Third step">
+            <div class="step-container">
+              <h3>
+                Registration completed!
+              </h3>
+              <h4>
+                Please wait for our admin. We are reviewing your account
+                details. We will get back to you within 1 day
+              </h4>
+              <button nbButton (click)="stepper.reset()" [routerLink]="['/pages/dashboard']">
+                Visit our dashboard
+              </button>
+            </div>
+          </nb-step>
+        </nb-stepper>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

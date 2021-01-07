@@ -1,0 +1,46 @@
+<nb-card>
+  <nb-card-header>
+    <p class="chart-description">
+      Share the problem with us <code>help</code> We are available for you to
+      make any help
+    </p>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="chat-container col-12 col-sm-6 col-md-8">
+        <nb-chat title="Azam Chat Bot" size="large" status="primary">
+          <nb-chat-message
+            *ngFor="let msg of messages"
+            [type]="msg.type"
+            [message]="msg.text"
+            [reply]="msg.reply"
+            [sender]="msg.user.name"
+            [date]="msg.date"
+            [files]="msg.files"
+            [quote]="msg.quote"
+            [latitude]="msg.latitude"
+            [longitude]="msg.longitude"
+            [avatar]="msg.user.avatar"
+          >
+          </nb-chat-message>
+          <nb-chat-form (send)="sendMessage($event)" [dropFiles]="true">
+          </nb-chat-form>
+        </nb-chat>
+      </div>
+      <div class="chat-container col-6 col-md-4">
+        <div class="chart-features">
+          <h2>You can also write us to:</h2>
+          <ul>
+            <li>
+              <strong>email:</strong>
+              support@azampay.com
+            </li>
+            <li><strong>Contact no.:</strong> +255777777777</li>
+            <li><strong>whatsApp::</strong> +255777777777</li>
+            <li><strong>Skype:</strong> (coming soon)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

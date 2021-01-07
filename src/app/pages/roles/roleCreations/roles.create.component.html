@@ -1,0 +1,70 @@
+<div class="accordions-container row">
+  <div class="accordion-container col-md-12 col-lg-12 col-xxxl-12">
+    <nb-card>
+      <nb-card-body>
+        <form [formGroup]="firstForm" (ngSubmit)="onFirstSubmit()">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="roleName" class="label">Role Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter your role name"
+                  class="form-control"
+                  formControlName="roleName"
+                  [ngClass]="{
+                    'form-control-danger':
+                      firstForm.invalid &&
+                      (firstForm.dirty || firstForm.touched)
+                  }"
+                />
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="roleSupervisor " class="label"
+                  >Role Supervisor</label
+                >
+                <input
+                  type="text"
+                  placeholder="Enter your role level"
+                  class="form-control"
+                  formControlName="roleSupervisor"
+                  [ngClass]="{
+                    'form-control-danger':
+                      firstForm.invalid &&
+                      (firstForm.dirty || firstForm.touched)
+                  }"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+        <nb-accordion>
+          <nb-accordion-item #item>
+            <nb-accordion-item-header>
+              User Roles
+            </nb-accordion-item-header>
+            <nb-accordion-item-body>
+              <div class="validation-checkboxes">
+                <nb-checkbox status="success">View User</nb-checkbox>
+              </div>
+              <div class="validation-checkboxes">
+                <nb-checkbox status="success">Add User</nb-checkbox>
+              </div>
+              <div class="validation-checkboxes">
+                <nb-checkbox status="success">Update User</nb-checkbox>
+              </div>
+              <div class="validation-checkboxes">
+                <nb-checkbox status="success">Delete User</nb-checkbox>
+              </div>
+            </nb-accordion-item-body>
+          </nb-accordion-item>
+        </nb-accordion>
+      </nb-card-body>
+      <div class="row saveButton">
+        <button nbButton>save</button>
+      </div>
+    </nb-card>
+  </div>
+</div>
